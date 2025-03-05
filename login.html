@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="loginstyle.css ">
+</head>
+<body>
+    <div class="container">
+        <div class="drop">
+            <div class="content">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <p class="error" id="error-message">Invalid username or password</p>
+                    <div class="input">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="input">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="input">
+                <input type="submit" id="submit" value="Login" href="#">
+            </div>
+                </form>
+            </div>
+        </div>
+        <a href="#" class="btn">Forget Password</a>
+        <a href="#" class="btn signup">Signup</a>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", ((event)=>{
+            event.preventDefault();
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            const web_usr_name = "Kunal";
+            const web_pass = "123456";
+
+            if(username === web_usr_name && password === web_pass){
+                window.location.href = "index.html";
+            }
+            else{
+                document.getElementById("error-message").style.display = "block";
+                document.getElementById("error-message").style.color = "red";
+            }
+        }));
+    </script>
+</body>
+</html>
